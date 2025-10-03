@@ -8,8 +8,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 class TestCodeApplicationTests {
 	@Test
 	void testFibonacci() {
-		Assertions.assertEquals(0, fib(0));
-		Assertions.assertEquals(1, fib(1));
+		int cases[][] = {{0,0}, {1,1}};
+
+		for(int i = 0; i < cases.length; i++) {
+			Assertions.assertEquals(cases[i][0], fib(cases[i][1]));
+		}
 	}
 
 	int fib(int n) {
